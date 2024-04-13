@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;00;1,400;11,3,500;1,700;1,900&display=swap');
+*{
+  font-family: "Fredoka", sans-serif;
+}
+.max-width{
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container{
+    min-height: 100vh;
+    background-image: url("./images/bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginForm
+{
+  background-color: rgba(102, 102, 102, 0.341);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  padding: 10px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.345);
+  margin: 10px;
+  padding-bottom: 10px;
+  width: 400px;
+ 
+}
+/* @media screen and (max-width:420px) {
+  .container{
+    width: 100% !important;
+  }
+} */
+h1{
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.input input{
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 15px 10px;
+  color: white;
+}
+
+input::placeholder{
+  color: white;
+}
+.input{
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 30px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 5px;
+  
+}
+ .input input:disabled{
+  cursor: no-drop;
+}
+.icon{
+  font-size: 20px;
+  color: white;
+}
+.text{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 5px 0;
+}
+.btn button{
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 30px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 18px;
+  padding: 12px 10px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.btn button:active{
+  outline:2px solid white;
+  outline-offset: 2px;
+}
+.dont{
+  text-align: center;
+  color: white;
+  padding: 5px 0;
+}
+.rem{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.forgot{
+  cursor: pointer;
+}
+.icons i{
+  color: white;
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 2px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.icons i:active{
+background-color: rgba(144, 144, 144, 0.1);
+backdrop-filter: blur(10px);
+}
+.icons{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+#check{
+  accent-color: white;
+}
+.double-icons{
+  color: white;
+  font-size: 25px;
+  display: flex;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  color: white;
+ max-height: 0;
+ overflow: hidden;
+ transition: 0.3s;
+}
+ul li{
+  list-style: none;
+  padding: 2px 0;
+}
+ul li i{
+  color: rgb(197, 4, 4);
+}
+.wh{
+  color: white !important;
+}
+ul.allul{
+  max-height: 1000px;
+  transition: 0.3s;
+}
+.btn button:disabled{
+  color: white;
+  cursor: no-drop;
+  outline: none;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: white;
+  -webkit-background-clip: text;
+}
