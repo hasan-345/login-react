@@ -26,7 +26,7 @@ function App() {
   const [abovez,setAboveZ] = useState(false);
   const [lower,setLo] = useState(false);
   const [symb,setSymbo] = useState(false); // these are all indicators
-  
+  const [numbers,setNumbers] = useState(false)
   const validatePassword = ()=>{
 
     if(action === "Login"){
@@ -48,7 +48,7 @@ function App() {
     setUpperLo(/[A-Z]/.test(Password.current.value));
     setLo(/[a-z]/.test(Password.current.value));
     setSymbo(/[^a-zA-Z0-9\s]/.test(Password.current.value));//regex for symbols
-    
+    setNumbers(Password.current.value.match(/\d{2,}/) !== null);
     
    
   }
@@ -127,13 +127,14 @@ function App() {
    {/* This is passwordField   */}
    <div className="input"> <input type="password" ref={Password}  placeholder='Password' onChange={validatePassword}/>  <div className='double-icons'>  { action === "Login"?  <i></i> :  (abovez && upperLo && lower && passw && symb ? <i className='bx bx-check-double'></i>: <i></i>) }   <i className="bx bxs-lock-alt"  id='ic' onClick={changeType} ></i></div></div>
     
-      {/* these are validations of password*/}
+      
        <ul id='ulTag' >
-{/* empty field indicator */}     <li>  {abovez == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  }   Enter password </li>
-{/* uppercase field indicator */}      <li>{upperLo == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Upper Case letters </li>
-{/* symbols field indicator */}     <li>{symb == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Symbols</li>
-{/* pass Length field indicator */}       <li>{passw == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  }  Atleast 8 charactors</li>
-{/* lowerCase field indicator */}       <li>{lower == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Lower Case letters </li>
+     <li>  {abovez == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  }   Enter password </li>
+      <li>{upperLo == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Upper Case letters </li>
+    <li>{symb == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Symbols</li>
+      <li>{passw == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  }  Atleast 8 charactors</li>
+     <li>{lower == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Lower Case letters </li>
+     <li>{numbers == true?<i className='bx wh bx-check-double'></i>:<i className='bx bxs-error-circle'></i>  } Numbers </li>
      </ul>        
    
     
@@ -146,7 +147,7 @@ function App() {
       <div className="forgot">
         Forgot password?
       </div>
-    </div>                                 {/* if action is equal to login then these statment will execute*/}                                         {/*if login is not equal to login then these statment will be execute  difference between these statment is first statment not check name error but second will check nameerror */}
+    </div>                                                                      {/*this below section is for validation in login page of password if you don't agree you can remove it and set '<></>'*/}                                       
     <div className="btn"><button id='btnLo' disabled={ action === "Login"? (abovez && upperLo && lower && passw && symb && errors === true ? false:true):(abovez && upperLo && lower && passw && symb && errors === true && nameError === true ? false:true)   }  > {action} </button>  </div>
       <div className="dont">Don't have an account? <span style={{cursor:"pointer"}}  onClick={SignU} > {action === "Login"? "Sign Up":"Login"} </span></div>
       <div className="icons"><i className='bx bxl-google'></i><i className='bx bxl-facebook-circle'></i><i className='bx bxl-twitter'></i><i className='bx bxl-linkedin-square'></i><i className='bx bxl-whatsapp'></i></div>
